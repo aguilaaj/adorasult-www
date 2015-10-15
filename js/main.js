@@ -1,4 +1,11 @@
-$.getJSON("http://adorasult-52423.onmodulus.net/", {dataType: "jsonp"})
-	.done(function(adorasult) {
-		$(".adorasult").html(adorasult.insult);
-	})
+var setAdorasult = function () {
+	$.getJSON("http://adorasult-52423.onmodulus.net/")
+		.done(function (adorasult) {
+			$(".adoratext").html(adorasult.insult);
+		})
+};
+ 
+$(document).ready(function () {
+	$(".adorabutton").click(setAdorasult);
+	setAdorasult();
+});
